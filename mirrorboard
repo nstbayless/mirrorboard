@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 from evdev import UInput, ecodes as e
 from evdev import InputDevice, KeyEvent
@@ -85,7 +85,3 @@ while True:
                         mirror_used = True
                         event.code = mirror_keys[event.code]
             ui.write_event(event)
-# TODO remove panic key "m"
-            if event.value == e.KEY_M:
-                dev.ungrab()
-                sys.exit(0)
